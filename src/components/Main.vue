@@ -1,9 +1,7 @@
 <template>
   <div class="bg-main">
     <div class="container">
-      <div class="row row-cols-5">
-        <CardsContainer></CardsContainer>
-      </div>
+      <CardsContainer></CardsContainer>
     </div>
   </div>
 </template>
