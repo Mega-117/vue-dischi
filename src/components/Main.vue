@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-main">
-    <div class="container">
+  <main>
+    <div class="container py-5">
       <CardsContainer></CardsContainer>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -18,8 +18,4 @@ export default {
 </script>
 
 <style>
-.bg-main {
-  background-color: #192d3b;
-  height: calc(100vh - 70px);
-}
 </style>
