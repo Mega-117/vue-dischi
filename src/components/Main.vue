@@ -18,4 +18,10 @@ export default {
 </script>
 
 <style>
+main {
+  position: relative;
+  width: 100%;
+
+  background-color: #192d3b;
+}
 </style>

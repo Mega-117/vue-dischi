@@ -1,12 +1,12 @@
 <template>
   <header>
     <nav class="px-4 py-2">
-      <div class="logo-container">
+      <a href="#">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/7/75/Spotify_icon.png"
           alt="logo-spotyfy"
         />
-      </div>
+      </a>
     </nav>
   </header>
 </template>
@@ -18,12 +18,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-nav {
-  background-color: #2b3a46;
-  height: 70px;
-  .logo-container {
-    width: 50px;
-    height: 50px;
+header {
+  margin-bottom: 70px;
+  nav {
+    background-color: #2b3a46;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
     img {
       height: 100%;
     }

@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 @import "@/styles/app.scss";
-#app {
+/* #app {
   background-color: #192d3b;
-}
+} */
 </style>
