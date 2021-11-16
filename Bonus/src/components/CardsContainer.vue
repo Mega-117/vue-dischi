@@ -49,6 +49,7 @@ export default {
           let element = this.diskList[i].genre;
           if (this.arrGeneri.includes(element)) {
             /* console.log(arrGeneri); */
+          } else {
             this.arrGeneri.push(element);
           }
         }
