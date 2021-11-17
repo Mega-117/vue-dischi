@@ -1,11 +1,15 @@
 <template>
   <div>
     <select
+      v-model="genereMusicale"
+      @change="$emit('searchGenre', genereMusicale)"
       class="form-select mb-4 text-white"
       aria-label="Default select example"
     >
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
+      <option :value="elemeto" v-for="(elemeto, i) in arrGeneri" :key="i">
+        {{ elemeto }}
+      </option>
     </select>
   </div>
 </template>
@@ -13,6 +17,12 @@
 <script>
 export default {
   name: "DiskFilter",
+  props: ["arrGeneri"],
+  data() {
+    return {
+      genereMusicale: "",
+    };
+  },
 };
 </script>
 

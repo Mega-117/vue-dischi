@@ -1,9 +1,9 @@
 <template>
   <div>
     <Loader v-if="loaderStatus === true"></Loader>
-    <DiskFilter></DiskFilter>
+    <DiskFilter :arrGeneri="arrGeneri" @searchGenre="filterGenre"></DiskFilter>
     <div class="row row-cols-1 row-cols-md-5 g-4">
-      <div class="col" v-for="(item, i) in diskList" :key="i">
+      <div class="col" v-for="(item, i) in filterGenre" :key="i">
         <Card
           :poster="item.poster"
           :title="item.title"
@@ -34,9 +34,21 @@ export default {
       diskList: [],
       loaderStatus: true,
       arrGeneri: [],
+      arrFiltrato: [],
     };
   },
-
+  methods: {
+    filterGenre(genereSelezionato) {
+      console.log(genereSelezionato);
+      if (!genereSelezionato) {
+        return this.diskList;
+      }
+      this.diskList.filter((disco) => {
+        return disco.genre === genereSelezionato;
+      });
+    },
+  },
+  computed: {},
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
@@ -47,9 +59,7 @@ export default {
         }, 1000);
         for (let i = 0; i < this.diskList.length; i++) {
           let element = this.diskList[i].genre;
-          if (this.arrGeneri.includes(element)) {
-            /* console.log(arrGeneri); */
-          } else {
+          if (!this.arrGeneri.includes(element)) {
             this.arrGeneri.push(element);
           }
         }
